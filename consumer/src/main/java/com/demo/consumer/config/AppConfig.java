@@ -12,7 +12,10 @@ public class AppConfig {
 
     public static final String NOMBRE = "RONALD ANTONIO AROCHE SANTOS";
     public static final String CARNET = "0905-24-17495";
-
+    
+    //Parte modificada
+    public static final String DUPLICADOS_QUEUE = "cola_duplicados";
+    
     public static final List<String> COLAS_BANCOS = List.of(
             "BANRURAL",
             "BI",

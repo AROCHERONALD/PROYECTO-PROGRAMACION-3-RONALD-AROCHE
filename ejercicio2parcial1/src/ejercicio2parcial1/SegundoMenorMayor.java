@@ -39,3 +39,10 @@ public class SegundoMenorMayor {
         System.out.println("Segundo mayor: " + resultado[1]);
     }
 }
+
+
+//“Lo que hice fue recorrer el arreglo una sola vez.
+//Fui guardando el menor y el segundo menor, y también el mayor y el segundo mayor.
+//Si encontraba un número más pequeño que el menor actual, entonces el menor pasaba a ser segundo menor.
+//Y si encontraba uno más grande que el mayor actual, entonces el mayor pasaba a ser segundo mayor.
+//Así no necesito ordenar el arreglo y cumplo con hacerlo en una sola pasada.”
