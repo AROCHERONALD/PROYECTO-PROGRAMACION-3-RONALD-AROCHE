@@ -19,9 +19,9 @@ public class PuntajeArreglo {
     }
 
     public static void main(String[] args) {
-        int[] arreglo1 = {1, 2, 3, 4, 5};
-        int[] arreglo2 = {17, 19, 21};
-        int[] arreglo3 = {5, 5, 5};
+        int[] arreglo1 = {4, 7, 11,56,32};
+        int[] arreglo2 = {14, 12, 56};
+        int[] arreglo3 = {55, 55, 55};
 
         System.out.println("Resultado 1: " + score(arreglo1));
         System.out.println("Resultado 2: " + score(arreglo2));
