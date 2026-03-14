@@ -1,3 +1,5 @@
+package ejercicio1parcial1;
+
 public class PuntajeArreglo {
 
     public static int score(int[] numbers) {
