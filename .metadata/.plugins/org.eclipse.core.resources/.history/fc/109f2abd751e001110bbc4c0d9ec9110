@@ -1,0 +1,61 @@
+package com.demo.consumer.service;
+
+import com.demo.consumer.config.AppConfig;
+import com.demo.consumer.model.Transaccion;
+import com.demo.consumer.model.TransaccionPost;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class ApiPostService {
+
+    private final HttpClient httpClient;
+    private final ObjectMapper objectMapper;
+
+    public ApiPostService() {
+        this.httpClient = HttpClient.newHttpClient();
+        this.objectMapper = new ObjectMapper();
+    }
+
+    public boolean enviarTransaccion(Transaccion transaccion) {
+        try {
+            TransaccionPost body = TransaccionPost.from(
+                    transaccion,
+                    AppConfig.NOMBRE,
+                    AppConfig.CARNET
+            );
+
+            String json = objectMapper.writeValueAsString(body);
+            System.out.println(json);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(AppConfig.POST_URL))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            int status = response.statusCode();
+            return status >= 200 && status < 300;
+
+        } catch (Exception e) {
+            System.err.println("Error enviando POST: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean enviarConReintento(Transaccion transaccion) {
+        boolean ok = enviarTransaccion(transaccion);
+
+        if (!ok) {
+            System.out.println("Primer intento falló. Reintentando...");
+            ok = enviarTransaccion(transaccion);
+        }
+
+        return ok;
+    }
+}

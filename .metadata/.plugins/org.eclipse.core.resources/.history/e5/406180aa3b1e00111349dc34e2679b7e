@@ -1,0 +1,22 @@
+package com.demo.consumer.config;
+
+import java.util.List;
+
+public class AppConfig {
+    public static final String POST_URL = "AQUI_VA_LA_URL_DEL_POST";
+
+    public static final String RABBIT_HOST = "localhost";
+    public static final int RABBIT_PORT = 5672;
+    public static final String RABBIT_USER = "guest";
+    public static final String RABBIT_PASSWORD = "guest";
+
+    public static final String NOMBRE = "TU_NOMBRE";
+    public static final String CARNET = "TU_CARNET";
+
+    public static final List<String> COLAS_BANCOS = List.of(
+            "BANRURAL",
+            "BI",
+            "BAC",
+            "GYT"
+    );
+}

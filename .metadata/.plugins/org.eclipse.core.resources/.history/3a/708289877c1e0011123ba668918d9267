@@ -1,0 +1,22 @@
+package com.demo.consumer.config;
+
+import java.util.List;
+
+public class AppConfig {
+    public static final String POST_URL = "public static final String POST_URL = \"https://7e0d9ogwzd.execute-api.us-east-1.amazonaws.com/default/guardarTransaccionesERROR\";";
+
+    public static final String RABBIT_HOST = "localhost";
+    public static final int RABBIT_PORT = 5672;
+    public static final String RABBIT_USER = "guest";
+    public static final String RABBIT_PASSWORD = "guest";
+
+    public static final String NOMBRE = "RONALD ANTONIO AROCHE SANTOS";
+    public static final String CARNET = "0905-24-17495";
+
+    public static final List<String> COLAS_BANCOS = List.of(
+            "BANRURAL",
+            "BI",
+            "BAC",
+            "GYT"
+    );
+}

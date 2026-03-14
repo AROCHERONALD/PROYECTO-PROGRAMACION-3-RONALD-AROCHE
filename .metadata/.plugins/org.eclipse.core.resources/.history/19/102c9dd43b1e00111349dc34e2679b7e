@@ -1,0 +1,5 @@
+package com.demo.consumer.service;
+
+public class ApiPostService {
+
+}

@@ -1,0 +1,95 @@
+package com.demo.consumer.model;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public class TransaccionPost {
+    private String idTransaccion;
+    private BigDecimal monto;
+    private String moneda;
+    private String cuentaOrigen;
+    private String bancoDestino;
+    private Detalle detalle;
+    private String nombre;
+    private String carnet;
+
+    public TransaccionPost() {
+    }
+
+    public static TransaccionPost from(Transaccion t, String nombre, String carnet) {
+        TransaccionPost post = new TransaccionPost();
+        post.setIdTransaccion(UUID.randomUUID().toString());
+        post.setMonto(t.getMonto());
+        post.setMoneda(t.getMoneda());
+        post.setCuentaOrigen(t.getCuentaOrigen());
+        post.setBancoDestino(t.getBancoDestino());
+        post.setDetalle(t.getDetalle());
+        post.setNombre(nombre);
+        post.setCarnet(carnet);
+        return post;
+    }
+
+    public String getIdTransaccion() {
+        return idTransaccion;
+    }
+
+    public void setIdTransaccion(String idTransaccion) {
+        this.idTransaccion = idTransaccion;
+    }
+
+    public BigDecimal getMonto() {
+        return monto;
+    }
+
+    public void setMonto(BigDecimal monto) {
+        this.monto = monto;
+    }
+
+    public String getMoneda() {
+        return moneda;
+    }
+
+    public void setMoneda(String moneda) {
+        this.moneda = moneda;
+    }
+
+    public String getCuentaOrigen() {
+        return cuentaOrigen;
+    }
+
+    public void setCuentaOrigen(String cuentaOrigen) {
+        this.cuentaOrigen = cuentaOrigen;
+    }
+
+    public String getBancoDestino() {
+        return bancoDestino;
+    }
+
+    public void setBancoDestino(String bancoDestino) {
+        this.bancoDestino = bancoDestino;
+    }
+
+    public Detalle getDetalle() {
+        return detalle;
+    }
+
+    public void setDetalle(Detalle detalle) {
+        this.detalle = detalle;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
+    }
+}
