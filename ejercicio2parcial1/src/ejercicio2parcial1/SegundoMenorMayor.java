@@ -2,4 +2,40 @@ package ejercicio2parcial1;
 
 public class SegundoMenorMayor {
 
+    public static int[] secondMinMax(int[] numbers) {
+        int menor = Integer.MAX_VALUE;
+        int segundoMenor = Integer.MAX_VALUE;
+        
+        int mayor = Integer.MIN_VALUE;
+        int segundoMayor = Integer.MIN_VALUE;
+
+        for (int n : numbers) {
+
+            // Buscar menor y segundo menor
+            if (n < menor) {
+                segundoMenor = menor;
+                menor = n;
+            } else if (n != menor && n < segundoMenor) {
+                segundoMenor = n;
+            }
+            // Buscar mayor y segundo mayor
+            if (n > mayor) {
+                segundoMayor = mayor;
+                mayor = n;
+            } else if (n != mayor && n > segundoMayor) {
+                segundoMayor = n;
+            }
+        }
+
+        return new int[]{segundoMenor, segundoMayor};
+    }
+
+    public static void main(String[] args) {
+        int[] arreglo = {100, 400, 1100, 600, 2200, 300};
+
+        int[] resultado = secondMinMax(arreglo);
+
+        System.out.println("Segundo menor: " + resultado[0]);
+        System.out.println("Segundo mayor: " + resultado[1]);
+    }
 }
