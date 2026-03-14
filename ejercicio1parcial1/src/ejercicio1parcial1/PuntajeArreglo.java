@@ -28,3 +28,10 @@ public class PuntajeArreglo {
         System.out.println("Resultado 3: " + score(arreglo3));
     }
 }
+
+
+//Complejidad temporal: O(n) porque solo se recorre el arreglo una vez
+//Complejidad espacial: O(1) porque solo se usa una variable para el total
+
+//“Le puse complejidad temporal O(n) porque el arreglo solo se recorre una vez. 
+//Y complejidad espacial O(1) porque solo estoy usando una variable para acumular el resultado.”
