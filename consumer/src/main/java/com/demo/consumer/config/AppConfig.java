@@ -3,7 +3,7 @@ package com.demo.consumer.config;
 import java.util.List;
 
 public class AppConfig {
-	public static final String POST_URL = "https://7e0d9ogwzd.execute-api.us-east-1.amazonaws.com/default/guardarTransaccionesERROR";
+	public static final String POST_URL = "https://7e0d9ogwzd.execute-api.us-east-1.amazonaws.com/default/guardarTransacciones";
 
     public static final String RABBIT_HOST = "localhost";
     public static final int RABBIT_PORT = 5672;
